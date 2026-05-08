@@ -1,0 +1,9 @@
+{
+  "name": "Maa Bagulamukhi Divine Darbar",
+  "description": "A luxury spiritual experience dedicated to Maa Bagulamukhi featuring divine services, interactive kundali, and a virtual temple.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": []
+}

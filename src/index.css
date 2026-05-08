@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold-300: #FFD700;
+  --color-gold-400: #FFD700;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #8B732A;
+  --color-gold-700: #423512;
+  
+  --color-dark-900: #030303;
+  --color-dark-800: #111111;
+  --color-dark-glass: rgba(255, 255, 255, 0.05);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cinzel', serif;
+  --font-sanskrit: 'Tiro Devanagari Hindi', serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-[#F3E5AB] font-sans overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  }
+  
+  .glass-card {
+    @apply bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl;
+  }
+  
+  .glass-card-hover {
+    @apply hover:border-gold-500/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-500;
+  }
+  
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-[#8B732A];
+  }
+
+  .gold-gradient-bg {
+    @apply bg-gradient-to-r from-[#D4AF37] to-[#8B732A] hover:bg-[#FFD700] hover:from-[#FFD700] hover:to-[#FFD700];
+  }
+
+  /* Safe Area padding for PWA style */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+}
+
+/* Custom Keyframes */
+@keyframes bg-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(192px); opacity: 0; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B732A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
